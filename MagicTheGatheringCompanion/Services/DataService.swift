@@ -38,21 +38,25 @@ class DataService{
         REF_USERS.child(uid).updateChildValues(userData)
     }
     
-    func getProviderID(handler: @escaping (_ username: String) -> ()){
-        let providerData = Auth.auth().currentUser?.providerData
-        
-        var providerUID = ""
-        providerData?.forEach({ (profile) in
-            providerUID = profile.uid
-        })
-        handler(providerUID)
+    //does not work for email sign in
+    func getProviderUID(handler: @escaping (_ username: String) -> ()){
+        let activeUserID = Auth.auth().currentUser?.uid
+//        let providerData = Auth.auth().currentUser?.providerData
+//        //let emailProvider = Firebase.EmailPasswordAuthSignInMethod
+//        var providerUID = ""
+//        providerData?.forEach({ (profile) in
+//            print(profile.uid)
+//            providerUID = profile.uid
+//        })
+//        handler(providerUID)
+        handler(activeUserID!)
     }
     
     func getUsername(handler: @escaping (_ username: String) -> ()){
         var username = ""
         
         //Gets the provider UID and retreives username inside closure from the database
-        getProviderID { (pID) in
+        getProviderUID { (pID) in
             self.REF_USERS.child(pID).observeSingleEvent(of: .value, with: { (userSnapshot) in
                 print(userSnapshot)
                 
@@ -104,13 +108,16 @@ class DataService{
         func addFriend(withName name: String){
             var databaseReferenceQuery = DataService.instance.REF_USERS.queryOrdered(byChild: "userName").queryEqual(toValue: name).observeSingleEvent(of: .value, with: { (snapshot) in
                 if ( snapshot.value != nil ) {
-                    // user exists, now add them to friends node
-                    DataService.instance.REF_FRIENDS.child("friends").updateChildValues(["username": name, "uid": "id"])
+                    // user exists, now add them to friends array in user
+                    self.getProviderUID(handler: { (pID) in
+                        let data = ["friend": snapshot.value]
+                        self.REF_FRIENDS.child(pID).updateChildValues(data as [AnyHashable : Any])
+                    })
                 }
-                
+
             }, withCancel: { (error) in
-                
                 // An error occurred
+                print(error.localizedDescription)
             })
         }
     }

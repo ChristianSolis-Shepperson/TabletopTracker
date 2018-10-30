@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 
                 //creates user in database
                 let userData = ["uid": Auth.auth().currentUser?.uid as Any, "wins": 0, "losses": 0, "winPercent": 0, "userName": "Planeswalker", "decks": [],"provider": "Google", "email": Auth.auth().currentUser?.email! as Any ] as [String : Any]
-                DataService.instance.createDBUser(uid: user.userID, userData: userData)
+                DataService.instance.createDBUser(uid: (Auth.auth().currentUser?.uid)!, userData: userData)
             }
         }
     }

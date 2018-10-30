@@ -43,22 +43,23 @@ class AuthVC: UIViewController, GIDSignInUIDelegate{
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func facebookSignInBtnPressed(_ sender: Any) {
-        if(Auth.auth().currentUser == nil) {
-            let loginManager = LoginManager()
-            loginManager.logIn(readPermissions: [.publicProfile,.email], viewController: self) { (result) in
-                switch result{
-                case .success(grantedPermissions: _, declinedPermissions: _, token: _): AuthService.instance.signInFirebase()
-                print("Successfully logged into Facebook")
-                self.dismiss(animated: true, completion: nil)
-                let userData = ["uid": Auth.auth().currentUser?.uid as Any ,"wins": 0, "losses": 0, "winPercent": 0, "userName": "Planeswalker", "decks": [],"provider": "Facebook", "email": Auth.auth().currentUser?.email! as Any ] as [String : Any]
-                DataService.instance.createDBUser(uid: FBSDKAccessToken.current().userID, userData: userData)
-                case .failed(let err): print(err)
-                case .cancelled: print("Option Canceled")
-                }
-            }
-        }
-    }
+    //FIXME
+//    @IBAction func facebookSignInBtnPressed(_ sender: Any) {
+//        if(Auth.auth().currentUser == nil) {
+//            let loginManager = LoginManager()
+//            loginManager.logIn(readPermissions: [.publicProfile,.email], viewController: self) { (result) in
+//                switch result{
+//                case .success(grantedPermissions: _, declinedPermissions: _, token: _): AuthService.instance.signInFirebase()
+//                print("Successfully logged into Facebook")
+//                self.dismiss(animated: true, completion: nil)
+//                let userData = ["uid": Auth.auth().currentUser?.uid as Any ,"wins": 0, "losses": 0, "winPercent": 0, "userName": "Planeswalker", "decks": [],"provider": "Facebook", "email": Auth.auth().currentUser?.email! as Any ] as [String : Any]
+//                DataService.instance.createDBUser(uid: Auth.auth().currentUser?.uid, userData: userData)
+//                case .failed(let err): print(err)
+//                case .cancelled: print("Option Canceled")
+//                }
+//            }
+//        }
+//    }
     
     
     

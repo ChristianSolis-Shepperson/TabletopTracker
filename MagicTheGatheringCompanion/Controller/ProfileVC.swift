@@ -23,10 +23,13 @@ class ProfileVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if Auth.auth().currentUser != nil {
+        //does not work with email sign in
+        if Auth.auth().currentUser != nil{
             DataService.instance.getUsername { (returnedUsername) in
                 self.usernameLabel.text = "Welcome \(returnedUsername)!"
             }
+        } else {
+            self.usernameLabel.text = "Welcome"
         }
     }
     
