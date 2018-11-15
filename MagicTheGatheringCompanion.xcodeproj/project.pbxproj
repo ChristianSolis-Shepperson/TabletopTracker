@@ -14,6 +14,9 @@
 		01492CC62161943D004C6A31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01492CC42161943D004C6A31 /* LaunchScreen.storyboard */; };
 		01492CF02161AA86004C6A31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01492CEF2161AA86004C6A31 /* GoogleService-Info.plist */; };
 		014D2A8921863FBE008DC3D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D2A8821863FBE008DC3D1 /* User.swift */; };
+		017AD664219D1C8E00B9785D /* GameSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017AD663219D1C8E00B9785D /* GameSystem.swift */; };
+		017AD666219D1CD100B9785D /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017AD665219D1CD100B9785D /* GameVC.swift */; };
+		0190981E2190B44600A58555 /* FriendSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190981D2190B44600A58555 /* FriendSystem.swift */; };
 		01B232E72162C26B00937694 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B232E62162C26B00937694 /* DataService.swift */; };
 		01B232EA2162C2F400937694 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B232E92162C2F400937694 /* AuthService.swift */; };
 		01B232EC2162C5D000937694 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B232EB2162C5D000937694 /* AuthVC.swift */; };
@@ -32,6 +35,9 @@
 		01492CC72161943D004C6A31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01492CEF2161AA86004C6A31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		014D2A8821863FBE008DC3D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		017AD663219D1C8E00B9785D /* GameSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSystem.swift; sourceTree = "<group>"; };
+		017AD665219D1CD100B9785D /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		0190981D2190B44600A58555 /* FriendSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSystem.swift; sourceTree = "<group>"; };
 		01B232E62162C26B00937694 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		01B232E92162C2F400937694 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		01B232EB2162C5D000937694 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 				01B232EB2162C5D000937694 /* AuthVC.swift */,
 				01B232ED2162CA1900937694 /* LoginVC.swift */,
 				01101A9A216A596B00025C04 /* ProfileVC.swift */,
+				017AD665219D1CD100B9785D /* GameVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -120,6 +127,8 @@
 			children = (
 				01B232E62162C26B00937694 /* DataService.swift */,
 				01B232E92162C2F400937694 /* AuthService.swift */,
+				0190981D2190B44600A58555 /* FriendSystem.swift */,
+				017AD663219D1C8E00B9785D /* GameSystem.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -291,13 +300,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				017AD666219D1CD100B9785D /* GameVC.swift in Sources */,
 				01B232EC2162C5D000937694 /* AuthVC.swift in Sources */,
 				01B232E72162C26B00937694 /* DataService.swift in Sources */,
+				017AD664219D1C8E00B9785D /* GameSystem.swift in Sources */,
 				01B232EE2162CA1900937694 /* LoginVC.swift in Sources */,
 				01492CBC2161943B004C6A31 /* AppDelegate.swift in Sources */,
 				014D2A8921863FBE008DC3D1 /* User.swift in Sources */,
 				01101A9B216A596B00025C04 /* ProfileVC.swift in Sources */,
 				01B232F02162D6CC00937694 /* InsetTextField.swift in Sources */,
+				0190981E2190B44600A58555 /* FriendSystem.swift in Sources */,
 				01B232EA2162C2F400937694 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

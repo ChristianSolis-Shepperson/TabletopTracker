@@ -50,11 +50,64 @@ class ProfileVC: UIViewController {
         
     }
     
+    @IBAction func ChangeUsernamePressed(_ sender: Any) {
+        messageBox(messageTitle: "Change username", messageAlert: "", messageBoxStyle: .alert, alertActionStyle: .default) {
+        }
+    }
+    
+    func messageBox(messageTitle: String, messageAlert: String, messageBoxStyle: UIAlertController.Style, alertActionStyle: UIAlertAction.Style, completionHandler: @escaping () -> Void)
+    {
+        let alert = UIAlertController(title: messageTitle, message: messageAlert, preferredStyle: messageBoxStyle)
+        alert.addTextField { (textfield) in
+            textfield.placeholder = "Enter new name"
+        }
+        
+        let okAction = UIAlertAction(title: "Ok", style: alertActionStyle) { _ in
+            let newUserName = alert.textFields?.first?.text
+            DataService.instance.REF_USERS.child((Auth.auth().currentUser?.uid)!).child("userName").setValue(newUserName)
+            
+            completionHandler() // This will only get called after okay is tapped in the alert
+        }
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
     //FIXME
     @IBAction func addFriendBtnPressed(_ sender: Any) {
         let friendName = addFriendText.text
         
+        var databaseReferenceQuery = DataService.instance.REF_USERS.queryOrdered(byChild: "userName").queryEqual(toValue: friendName).observeSingleEvent(of: .value, with: { (snapshot) in
+            if ( snapshot.value != nil ) {
+                // user exists, send request
+                for child in snapshot.children {
+                    let snap = child as! DataSnapshot
+                    let dict = snap.value as! [String: Any]
+                    let friendUID = dict["uid"] as! String
+                    FriendSystem.system.sendRequestToUser(friendUID)
+                }
+            }
+            
+            let alertController = UIAlertController(title: "Friend Request", message: "Request Sent", preferredStyle: .alert)
+            
+            // Create OK button
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+                
+                // Code in this block will trigger when OK button tapped.
+                print("Ok button tapped");
+                
+            }
+            alertController.addAction(OKAction)
+            
+            // Present Dialog message
+            self.present(alertController, animated: true, completion:nil)
+            
+        }, withCancel: { (error) in
+            // An error occurred
+            UIAlertController.init(title: "Friend Request", message: "An Error Occurred", preferredStyle: .alert)
+            print(error.localizedDescription)
+        })
     }
-
-    
 }

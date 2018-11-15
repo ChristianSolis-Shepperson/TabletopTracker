@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wb9-rk-h2p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wb9-rk-h2p">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -174,7 +174,7 @@
                                         <color key="textColor" red="0.83529411760000005" green="0.72156862749999995" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcM-mM-wh4" customClass="InsetTextField" customModule="MagicTheGatheringCompanion">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcM-mM-wh4">
                                         <rect key="frame" x="0.0" y="50.333333333333343" width="374" height="50"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20392156859999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -184,7 +184,7 @@
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YBR-Qt-Cs9" customClass="InsetTextField" customModule="MagicTheGatheringCompanion">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YBR-Qt-Cs9">
                                         <rect key="frame" x="0.0" y="120.33333333333334" width="374" height="50"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20392156859999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -287,17 +287,29 @@
                                     <action selector="signOutBtnPressed:" destination="Wb9-rk-h2p" eventType="touchUpInside" id="1JJ-uM-SOJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjX-ED-mUz">
+                                <rect key="frame" x="20" y="142" width="374" height="30"/>
+                                <state key="normal" title="Change Username">
+                                    <color key="titleColor" red="0.83529411760000005" green="0.72156862749999995" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChangeUsernamePressed:" destination="Wb9-rk-h2p" eventType="touchUpInside" id="UU1-cI-bZR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25490196079999999" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="LjX-ED-mUz" firstAttribute="top" secondItem="nYl-du-1JG" secondAttribute="bottom" constant="8" id="0Yb-qj-KwE"/>
                             <constraint firstItem="VcD-UE-Yg2" firstAttribute="top" secondItem="nYl-du-1JG" secondAttribute="bottom" constant="403" id="B5I-5Z-tR7"/>
                             <constraint firstItem="1De-xF-lA4" firstAttribute="trailing" secondItem="VcD-UE-Yg2" secondAttribute="trailing" constant="20" id="C2E-aU-jKD"/>
                             <constraint firstItem="nYl-du-1JG" firstAttribute="top" secondItem="1De-xF-lA4" secondAttribute="top" constant="50" id="Ijy-dG-6gf"/>
                             <constraint firstItem="1De-xF-lA4" firstAttribute="trailing" secondItem="oN7-6A-j6n" secondAttribute="trailing" constant="20" id="KFC-Nh-doM"/>
                             <constraint firstItem="oN7-6A-j6n" firstAttribute="leading" secondItem="1De-xF-lA4" secondAttribute="leading" constant="20" id="S1z-FI-Cwz"/>
                             <constraint firstItem="1De-xF-lA4" firstAttribute="trailing" secondItem="nYl-du-1JG" secondAttribute="trailing" constant="20" id="UhZ-zo-b7F"/>
+                            <constraint firstItem="LjX-ED-mUz" firstAttribute="leading" secondItem="1De-xF-lA4" secondAttribute="leading" constant="20" id="h8J-el-5YC"/>
                             <constraint firstAttribute="bottomMargin" secondItem="oN7-6A-j6n" secondAttribute="bottom" constant="20" id="pGg-5J-uIE"/>
                             <constraint firstItem="nYl-du-1JG" firstAttribute="leading" secondItem="1De-xF-lA4" secondAttribute="leading" constant="20" id="qKy-B7-JU5"/>
+                            <constraint firstItem="1De-xF-lA4" firstAttribute="trailing" secondItem="LjX-ED-mUz" secondAttribute="trailing" constant="20" id="rqh-QQ-YqM"/>
                             <constraint firstItem="VcD-UE-Yg2" firstAttribute="leading" secondItem="1De-xF-lA4" secondAttribute="leading" constant="20" id="uiN-aI-cz9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1De-xF-lA4"/>
@@ -312,7 +324,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKz-RN-V3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="j9H-Nk-Bcd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1613.0434782608697" y="-123.21428571428571"/>
+            <point key="canvasLocation" x="1372" y="-123"/>
+        </scene>
+        <!--GameVC-->
+        <scene sceneID="lwW-uv-srk">
+            <objects>
+                <viewController id="oUE-Gq-M7H" customClass="GameVC" customModule="MagicTheGatheringCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lrf-tV-Vs7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4m-1O-dr2">
+                                <rect key="frame" x="180" y="337" width="71" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                <state key="normal" title="Health">
+                                    <color key="titleColor" red="0.83529411760000005" green="0.72156862749999995" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLt-M9-Kvx">
+                                <rect key="frame" x="178" y="726" width="60" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
+                                <state key="normal" title="Mana">
+                                    <color key="titleColor" red="0.83529411760000005" green="0.72156862749999995" blue="0.015686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QVB-nF-smN">
+                                <rect key="frame" x="20" y="44" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25490196079999999" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="ccZ-nh-aYY"/>
+                    </view>
+                    <connections>
+                        <outlet property="manaBtn" destination="cLt-M9-Kvx" id="iB7-Na-stu"/>
+                        <outlet property="playerHealthBtn" destination="G4m-1O-dr2" id="9NW-0M-niy"/>
+                        <outlet property="turnIndicator" destination="QVB-nF-smN" id="C8g-gJ-Wia"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O5P-bO-eQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2286.9565217391305" y="-123.21428571428571"/>
         </scene>
     </scenes>
     <resources>
