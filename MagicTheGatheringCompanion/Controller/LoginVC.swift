@@ -1,6 +1,6 @@
 //
 //  LoginVC.swift
-//  breakpoint
+//  MagicTheGatheringCompanion
 //
 //  Created by Christian Solis-Shepperson on 6/3/18.
 //  Copyright © 2018 Christian Solis-Shepperson. All rights reserved.

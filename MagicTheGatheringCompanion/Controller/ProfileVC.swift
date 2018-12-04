@@ -15,6 +15,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var signOutBtn: UIButton!
     @IBOutlet weak var addFriendText: UITextField!
     @IBOutlet weak var addFriendBtn: UIButton!
+    @IBOutlet weak var viewRequestBtn: UIButton!
     
     
     override func viewDidLoad() {
@@ -23,7 +24,7 @@ class ProfileVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //does not work with email sign in
+        
         if Auth.auth().currentUser != nil{
             DataService.instance.getUsername { (returnedUsername) in
                 self.usernameLabel.text = "Welcome \(returnedUsername)!"
@@ -64,9 +65,14 @@ class ProfileVC: UIViewController {
         
         let okAction = UIAlertAction(title: "Ok", style: alertActionStyle) { _ in
             let newUserName = alert.textFields?.first?.text
-            DataService.instance.REF_USERS.child((Auth.auth().currentUser?.uid)!).child("userName").setValue(newUserName)
             
-            completionHandler() // This will only get called after okay is tapped in the alert
+            //if input is valid and not whitespace
+            if !(newUserName?.trimmingCharacters(in: .whitespaces).isEmpty)!{
+                DataService.instance.REF_USERS.child((Auth.auth().currentUser?.uid)!).child("userName").setValue(newUserName)
+                
+                completionHandler() // This will only get called after okay is tapped in the alert
+                
+            }
         }
         
         alert.addAction(okAction)
@@ -75,7 +81,6 @@ class ProfileVC: UIViewController {
     }
     
     
-    //FIXME
     @IBAction func addFriendBtnPressed(_ sender: Any) {
         let friendName = addFriendText.text
         
@@ -110,4 +115,17 @@ class ProfileVC: UIViewController {
             print(error.localizedDescription)
         })
     }
+    
+    @IBAction func viewRequestBtnPressed(_ sender: Any) {
+        //go to requestvc
+        let requestVC = storyboard?.instantiateViewController(withIdentifier: "RequestVC")
+        present(requestVC!, animated: true, completion: nil)
+    }
+    
+    @IBAction func viewGameRequestsPressed(_ sender: Any) {
+        //go to gamerequestvc
+        let gameRequestVC = storyboard?.instantiateViewController(withIdentifier: "GameRequestVC")
+        present(gameRequestVC!, animated: true, completion: nil)
+    }
+    
 }

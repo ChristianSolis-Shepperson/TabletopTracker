@@ -1,6 +1,6 @@
 //
 //  DataService.swift
-//  breakpoint
+//  MagicTheGatheringCompanion
 //
 //  Created by Christian Solis-Shepperson on 6/3/18.
 //  Copyright © 2018 Christian Solis-Shepperson. All rights reserved.
@@ -49,29 +49,39 @@ class DataService{
         //Gets the provider UID and retreives username inside closure from the database
         getProviderUID { (pID) in
             self.REF_USERS.child(pID).observe(.value, with: { (userSnapshot) in
-                print(userSnapshot)
+                //print(userSnapshot)
                 
                 let value = userSnapshot.value as? NSDictionary
                 let returnedUsername = value?["userName"] as? String ?? ""
                 username = returnedUsername
-                print(username)
+                //print(username)
                 handler(username)
             })
         }
+    }
+    
+    func getUsernames(forID userID: String, handler: @escaping (_ username: String) -> ()){
+        var username = ""
         
-        func getEmail(forSearchQuery query: String, handler: @escaping (_ emailArray: [String])->()){
-            var emailArray = [String]()
-            
-            REF_USERS.observe(.value) { (userSnapshot) in
-                guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else {return}
-                for user in userSnapshot{
-                    let email = user.childSnapshot(forPath: "email").value as! String
-                    if email.contains(query) == true && email != Auth.auth().currentUser?.email{
-                        emailArray.append(email)
-                    }
+        REF_USERS.child(userID).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            guard let name = snapshot.childSnapshot(forPath: "userName").value as? String else {return}
+            username = name
+        })
+        handler(username)
+    }
+    
+    func getIds(forUsernames usernames: [String], handler: @escaping (_ uidArray: [String])->()){
+        REF_USERS.observe(.value) { (userSnapshot) in
+            var idArray = [String]()
+            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else {return}
+            for user in userSnapshot{
+                guard let userName = user.childSnapshot(forPath: "userName").value as? String else {return}
+                if usernames.contains(userName){
+                    print("here is userid \(user.key)")
+                    idArray.append(user.key)
                 }
-                handler(emailArray)
             }
+            handler(idArray)
         }
     }
 }

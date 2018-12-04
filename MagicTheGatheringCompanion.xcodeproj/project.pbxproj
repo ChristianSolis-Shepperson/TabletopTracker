@@ -16,7 +16,14 @@
 		014D2A8921863FBE008DC3D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D2A8821863FBE008DC3D1 /* User.swift */; };
 		017AD664219D1C8E00B9785D /* GameSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017AD663219D1C8E00B9785D /* GameSystem.swift */; };
 		017AD666219D1CD100B9785D /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017AD665219D1CD100B9785D /* GameVC.swift */; };
+		018C31D921A71F7100124A26 /* RequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018C31D821A71F7100124A26 /* RequestVC.swift */; };
+		018C31DB21A728D300124A26 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018C31DA21A728D300124A26 /* UserCell.swift */; };
+		018C31DD21A8CEB900124A26 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018C31DC21A8CEB900124A26 /* Requests.swift */; };
+		018C31DF21AC45E600124A26 /* CreateGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018C31DE21AC45E600124A26 /* CreateGameVC.swift */; };
+		018C31E121B2F13200124A26 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018C31E021B2F13200124A26 /* Game.swift */; };
 		0190981E2190B44600A58555 /* FriendSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0190981D2190B44600A58555 /* FriendSystem.swift */; };
+		0199F17B21B5CD53000B456E /* GameRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0199F17A21B5CD53000B456E /* GameRequestVC.swift */; };
+		0199F17D21B5DDD0000B456E /* JoinGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0199F17C21B5DDD0000B456E /* JoinGameVC.swift */; };
 		01B232E72162C26B00937694 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B232E62162C26B00937694 /* DataService.swift */; };
 		01B232EA2162C2F400937694 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B232E92162C2F400937694 /* AuthService.swift */; };
 		01B232EC2162C5D000937694 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B232EB2162C5D000937694 /* AuthVC.swift */; };
@@ -37,7 +44,14 @@
 		014D2A8821863FBE008DC3D1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		017AD663219D1C8E00B9785D /* GameSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSystem.swift; sourceTree = "<group>"; };
 		017AD665219D1CD100B9785D /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		018C31D821A71F7100124A26 /* RequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestVC.swift; sourceTree = "<group>"; };
+		018C31DA21A728D300124A26 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		018C31DC21A8CEB900124A26 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		018C31DE21AC45E600124A26 /* CreateGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameVC.swift; sourceTree = "<group>"; };
+		018C31E021B2F13200124A26 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		0190981D2190B44600A58555 /* FriendSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSystem.swift; sourceTree = "<group>"; };
+		0199F17A21B5CD53000B456E /* GameRequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRequestVC.swift; sourceTree = "<group>"; };
+		0199F17C21B5DDD0000B456E /* JoinGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameVC.swift; sourceTree = "<group>"; };
 		01B232E62162C26B00937694 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		01B232E92162C2F400937694 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		01B232EB2162C5D000937694 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
@@ -99,6 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				014D2A8821863FBE008DC3D1 /* User.swift */,
+				018C31DA21A728D300124A26 /* UserCell.swift */,
+				018C31DC21A8CEB900124A26 /* Requests.swift */,
+				018C31E021B2F13200124A26 /* Game.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,6 +135,10 @@
 				01B232ED2162CA1900937694 /* LoginVC.swift */,
 				01101A9A216A596B00025C04 /* ProfileVC.swift */,
 				017AD665219D1CD100B9785D /* GameVC.swift */,
+				018C31D821A71F7100124A26 /* RequestVC.swift */,
+				018C31DE21AC45E600124A26 /* CreateGameVC.swift */,
+				0199F17A21B5CD53000B456E /* GameRequestVC.swift */,
+				0199F17C21B5DDD0000B456E /* JoinGameVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -301,16 +322,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				017AD666219D1CD100B9785D /* GameVC.swift in Sources */,
+				018C31DB21A728D300124A26 /* UserCell.swift in Sources */,
 				01B232EC2162C5D000937694 /* AuthVC.swift in Sources */,
 				01B232E72162C26B00937694 /* DataService.swift in Sources */,
 				017AD664219D1C8E00B9785D /* GameSystem.swift in Sources */,
+				018C31DD21A8CEB900124A26 /* Requests.swift in Sources */,
 				01B232EE2162CA1900937694 /* LoginVC.swift in Sources */,
+				0199F17B21B5CD53000B456E /* GameRequestVC.swift in Sources */,
 				01492CBC2161943B004C6A31 /* AppDelegate.swift in Sources */,
 				014D2A8921863FBE008DC3D1 /* User.swift in Sources */,
 				01101A9B216A596B00025C04 /* ProfileVC.swift in Sources */,
+				018C31D921A71F7100124A26 /* RequestVC.swift in Sources */,
 				01B232F02162D6CC00937694 /* InsetTextField.swift in Sources */,
 				0190981E2190B44600A58555 /* FriendSystem.swift in Sources */,
 				01B232EA2162C2F400937694 /* AuthService.swift in Sources */,
+				018C31DF21AC45E600124A26 /* CreateGameVC.swift in Sources */,
+				0199F17D21B5DDD0000B456E /* JoinGameVC.swift in Sources */,
+				018C31E121B2F13200124A26 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
