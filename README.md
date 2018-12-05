@@ -4,7 +4,7 @@ TabletopTracker is a unique support application to the card game. Users will be 
 
 ## Getting Started
 
-To get a copy of this project for personal use, download a copy of all the files onto your Mac device and use with Xcode 9 in a simulator, or download to your iPhone to use.
+To get a copy of this project for personal use, download a copy of all the files onto your Mac device and open MagicTheGathering.workspace with Xcode 9 in a simulator and/or download to your iPhone to use.
 
 ### What's Included?
 
